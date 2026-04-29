@@ -177,7 +177,7 @@ http://127.0.0.1:8000/api/docs/
 
 **Sherullah Mohtat**
 
-GitHub: https://github.com/Sherullah-Mohtat
+https://github.com/Sherullah-Mohtat/company-simple-project.git
 
 ---
 
