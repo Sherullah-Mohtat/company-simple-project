@@ -19,7 +19,8 @@ Production-style Django REST Framework project with JWT authentication, PostgreS
   <a href="#tech-stack">Tech Stack</a> •
   <a href="#project-structure">Structure</a> •
   <a href="#installation">Install</a> •
-  <a href="#api-docs">API Docs</a>
+  <a href="#api-docs">API Docs</a> •
+  <a href="#Screenshots">Screenshots</a>
 </p>
 
 ---
@@ -156,19 +157,19 @@ http://127.0.0.1:8000/api/docs/
 
 ## Screenshots
 
-![Home Page](images/index_page.png)
+![Home](images/index_page.png)
 
 ![Companies](images/companies.png)
 
 ![Employees](images/employees.png)
 
-![Home](images/index_page.png)
-
-![Swagger](images/api_docs.png)
-
 ![Admin](images/admin1.png)
 
 ![Admin](images/admin2.png)
+
+![Swagger](images/api_docs.png)
+
+
 
 ---
 
