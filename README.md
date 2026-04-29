@@ -162,15 +162,13 @@ http://127.0.0.1:8000/api/docs/
 
 ![Employees](images/employees.png)
 
-
-
-Then use:
-
-```md
 ![Home](images/index_page.png)
+
 ![Swagger](images/api_docs.png)
+
 ![Admin](images/admin1.png)
-```
+
+![Admin](images/admin2.png)
 
 ---
 
