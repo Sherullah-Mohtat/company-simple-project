@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company Simple Project API Docs</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css">
+
+    <style>
+        body {
+            margin: 0;
+            background: #f5f7fb;
+            font-family: Arial, sans-serif;
+        }
+
+        .topbar-custom {
+            background: #0f172a;
+            color: white;
+            padding: 22px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .version {
+            background: #7c3aed;
+            padding: 6px 12px;
+            border-radius: 8px;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        .hero {
+            background: white;
+            margin: 30px;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .hero p {
+            color: #6b7280;
+            font-size: 18px;
+        }
+
+        #swagger-ui {
+            margin: 30px;
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .swagger-ui .opblock {
+            border-radius: 12px !important;
+        }
+
+        .swagger-ui .opblock-summary {
+            border-radius: 12px !important;
+        }
+
+        .swagger-ui .btn.authorize {
+            background: #111827 !important;
+            color: white !important;
+            border-radius: 10px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="topbar-custom">
+    <div>
+        <span class="brand">🏢 Company Simple Project</span>
+        <span class="version">1.0.0</span>
+    </div>
+</div>
+
+<div class="hero">
+    <h1>API Documentation</h1>
+    <p>Explore and test the Company Simple Project API endpoints.</p>
+</div>
+
+<div id="swagger-ui"></div>
+
+<script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
+<script>
+    window.onload = function () {
+        SwaggerUIBundle({
+            url: "/api/schema/",
+            dom_id: "#swagger-ui",
+            deepLinking: true,
+            persistAuthorization: true
+        });
+    };
+</script>
+
+</body>
+</html>

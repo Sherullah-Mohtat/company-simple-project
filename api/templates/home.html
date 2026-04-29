@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Simple Project</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+        .navbar {
+            background: #111827;
+            color: white;
+            padding: 18px 40px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #6b7280;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #111827;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        Company Simple Project
+    </div>
+
+    <section class="hero">
+        <h1>Welcome to Company Simple Project</h1>
+        <p>Manage companies, employees, API documentation, and admin tools.</p>
+    </section>
+
+    <section class="cards">
+        <a class="card" href="/api/v1/pages/companies/">
+            <h2>🏢 Companies</h2>
+            <p>View all registered companies and their information.</p>
+        </a>
+
+        <a class="card" href="/api/v1/pages/employees/">
+            <h2>👨‍💼 Employees</h2>
+            <p>View employees and their company relationships.</p>
+        </a>
+
+        <a class="card" href="/api/docs/">
+            <h2>📘 API Docs</h2>
+            <p>Open Swagger documentation for DRF API.</p>
+        </a>
+
+        <a class="card" href="/admin/">
+            <h2>⚙️ Admin Panel</h2>
+            <p>Manage database records using Django Admin.</p>
+        </a>
+    </section>
+
+    <div class="footer">
+        © 2026 Company Simple Project
+    </div>
+
+</body>
+</html>

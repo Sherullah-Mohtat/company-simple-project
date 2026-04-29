@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #111827;
+        }
+
+        .navbar {
+            background: #111827;
+            color: white;
+            padding: 18px 40px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .top h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .home-link {
+            text-decoration: none;
+            background: #111827;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f3f4f6;
+            text-align: left;
+            padding: 16px;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        td {
+            padding: 16px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        tr:hover {
+            background: #f9fafb;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+
+        .email {
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        .badge {
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: bold;
+            background: #ede9fe;
+            color: #6d28d9;
+        }
+
+        .company {
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #e0f2fe;
+            color: #0369a1;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    Company Simple Project
+</div>
+
+<div class="container">
+    <div class="top">
+        <h1>👨‍💼 Employees</h1>
+        <a class="home-link" href="{% url 'home' %}">← Home</a>
+    </div>
+
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Position</th>
+                    <th>Company</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                    <td class="name">{{ employee.name }}</td>
+                    <td class="email">{{ employee.email }}</td>
+                    <td>{{ employee.phone }}</td>
+                    <td><span class="badge">{{ employee.position }}</span></td>
+                    <td><span class="company">{{ employee.company.name }}</span></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="empty">No employees found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Companies</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #111827;
+        }
+
+        .navbar {
+            background: #111827;
+            color: white;
+            padding: 18px 40px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .top h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .home-link {
+            text-decoration: none;
+            background: #111827;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f3f4f6;
+            text-align: left;
+            padding: 16px;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        td {
+            padding: 16px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        tr:hover {
+            background: #f9fafb;
+        }
+
+        .badge {
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: bold;
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .active {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        .inactive {
+            color: #b91c1c;
+            font-weight: bold;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    Company Simple Project
+</div>
+
+<div class="container">
+    <div class="top">
+        <h1>🏢 Companies</h1>
+        <a class="home-link" href="{% url 'home' %}">← Home</a>
+    </div>
+
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for company in companies %}
+                <tr>
+                    <td><strong>{{ company.name }}</strong></td>
+                    <td>{{ company.location }}</td>
+                    <td><span class="badge">{{ company.type }}</span></td>
+                    <td>
+                        {% if company.active %}
+                            <span class="active">Active</span>
+                        {% else %}
+                            <span class="inactive">Inactive</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="empty">No companies found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
