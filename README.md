@@ -1,4 +1,4 @@
-<h1 align="center">🚀 Company Simple Project</h1>
+<h1 align="center">Company Simple Project</h1>
 
 <p align="center">
 Production-style Django REST Framework project with JWT authentication, PostgreSQL / SQLite support, split settings architecture, templates, and customized admin panel.
@@ -14,12 +14,12 @@ Production-style Django REST Framework project with JWT authentication, PostgreS
 </p>
 
 <p align="center">
+  <a href="#overview">Overview</a> •
   <a href="#features">Features</a> •
   <a href="#tech-stack">Tech Stack</a> •
   <a href="#project-structure">Structure</a> •
   <a href="#installation">Install</a> •
-  <a href="#api-docs">API Docs</a> •
-  <a href="#screenshots">Screenshots</a>
+  <a href="#api-docs">API Docs</a>
 </p>
 
 ---
@@ -32,39 +32,38 @@ Company Simple Project is a professional Django REST Framework backend project b
 
 ## Features
 
-- 🔐 JWT Authentication using SimpleJWT  
-- 🐘 PostgreSQL Support  
-- 💾 SQLite Support  
-- ⚙️ Split Settings (`base.py`, `dev.py`, `prod.py`)  
-- 📘 Swagger / OpenAPI Documentation  
-- 🏢 Companies Module  
-- 👨‍💼 Employees Module  
-- 🎨 Customized Django Admin Panel  
-- 🌐 HTML Templates  
-- 🔒 Environment Variables with `.env`  
-- 📂 GitHub Ready Structure  
+- 🔐 JWT Authentication using SimpleJWT
+- 🐘 PostgreSQL Support
+- 💾 SQLite Support
+- ⚙️ Split Settings (`base.py`, `dev.py`, `prod.py`)
+- 📘 Swagger / OpenAPI Documentation
+- 🏢 Companies Module
+- 👨‍💼 Employees Module
+- 🎨 Customized Django Admin Panel
+- 🌐 HTML Templates
+- 🔒 Environment Variables with `.env`
+- 📂 GitHub Ready Structure
 
 ---
 
 ## Tech Stack
 
-- Python  
-- Django  
-- Django REST Framework  
-- PostgreSQL  
-- SQLite  
-- SimpleJWT  
-- drf-spectacular  
-- django-filter  
-- Jazzmin Admin Theme  
+- Python
+- Django
+- Django REST Framework
+- PostgreSQL
+- SQLite
+- SimpleJWT
+- drf-spectacular
+- django-filter
+- Jazzmin Admin Theme
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
-company-simple-project/
-│── api/
+ ── api/
 │   ├── admin/
 │   ├── migrations/
 │   ├── models/
@@ -87,11 +86,13 @@ company-simple-project/
 │── manage.py
 │── requirements.txt
 │── README.md
+```
 
 ---
 
-# Installation
+## Installation
 
+```bash
 git clone https://github.com/Sherullah-Mohtat/company-simple-project.git
 cd company-simple-project
 
@@ -109,12 +110,13 @@ cp .env.example .env
 
 python manage.py migrate
 python manage.py runserver
+```
 
 ---
 
-Example .env
+## Example .env
 
-```text
+```env
 DJANGO_SETTINGS_MODULE=config.settings.dev
 DEBUG=True
 
@@ -130,19 +132,56 @@ DB_NAME=db.sqlite3
 # DB_PASSWORD=yourpassword
 # DB_HOST=127.0.0.1
 # DB_PORT=5432
+```
 
 ---
 
-Run Project
+## Run Project
 
 ```text
 http://127.0.0.1:8000/
+```
 
-API Docs
+---
+
+## API Docs
 
 Swagger UI:
 
 ```text
 http://127.0.0.1:8000/api/docs/
+```
+
+---
+
+## Screenshots
+
+![Home Page](images/index_page.png)
+
+![Companies](images/companies.png)
+
+![Employees](images/employees.png)
 
 
+
+Then use:
+
+```md
+![Home](images/index_page.png)
+![Swagger](images/api_docs.png)
+![Admin](images/admin1.png)
+```
+
+---
+
+## Author
+
+**Sherullah Mohtat**
+
+GitHub: https://github.com/Sherullah-Mohtat
+
+---
+
+## License
+
+MIT Licen
