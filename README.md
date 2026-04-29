@@ -155,6 +155,136 @@ http://127.0.0.1:8000/api/docs/
 
 ---
 
+## 🔐 JWT Authentication Guide
+
+Protected API endpoints require a token for create, update, or delete actions.
+
+Current token settings:
+
+- **Access Token Lifetime:** 30 minutes  
+- **Refresh Token Lifetime:** 7 days  
+
+---
+
+## 1. Generate Tokens
+
+Send `POST` request:
+
+```text
+http://127.0.0.1:8000/api/token/
+```
+
+---
+
+Body:
+
+```text
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+```
+
+---
+
+Response:
+
+```text
+{
+  "refresh": "your_refresh_token",
+  "access": "your_access_token"
+}
+```
+
+---
+
+# 2. Use Access Token
+
+Use access token in protected requests:
+
+```text
+Authorization: Bearer your_access_token
+```
+
+Example:
+
+```text
+POST /api/v1/companies/
+PUT /api/v1/companies/1/
+DELETE /api/v1/companies/1/
+```
+# 3. Access Token Expiration
+
+Access token expires after:
+
+```text
+30 minutes
+```
+
+After expiration, generate new access token using refresh token.
+
+---
+
+# 4. Refresh Token Usage
+
+Send POST request:
+
+```text
+http://127.0.0.1:8000/api/token/refresh/
+```
+
+Body:
+
+```text
+
+{
+  "refresh": "your_refresh_token"
+}
+```
+
+Response:
+
+If refresh token rotation is enabled, a new refresh token may also be returned.
+
+---
+
+# 5. Refresh Token Expiration
+
+Refresh token expires after:
+
+```text
+7 days
+```
+
+After 7 days, login again using username/password.
+
+---
+
+# 6. Example Workflow
+
+```text
+Login once →
+Get access token (30 min)
+Get refresh token (7 days)
+
+After 30 min →
+Use refresh token
+
+After 7 days →
+Login again
+```
+
+---
+
+# 7. Security Notes
+
+* Never share tokens
+* Store tokens securely
+* Use HTTPS in production
+* Rotate tokens regularly
+  
+---
+
 ## Screenshots
 
 ![Home](images/index_page.png)
